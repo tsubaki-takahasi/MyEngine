@@ -13,5 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{422920eb-0c62-4aa5-9f6c-6162ad38e7a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\.cpp">
+      <UniqueIdentifier>{0e9ce0c6-705b-4783-a3b3-6b5d1dbeb502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\.h">
+      <UniqueIdentifier>{27b1df6c-c2e0-46b4-a6ea-55de14b29b78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\2D">
+      <UniqueIdentifier>{948a4b4f-6d57-4998-a82f-ccaf90f7aece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\2D">
+      <UniqueIdentifier>{8791a5f3-9718-42ed-9c27-c3821195cf0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\3D">
+      <UniqueIdentifier>{1ba1f019-9008-46bf-8238-e5bd43c4dad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\3D">
+      <UniqueIdentifier>{eb55d8d0-01ea-4428-a77d-04bb02407df6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\WinApp.cpp">
+      <Filter>Base\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\DirectXCommon.cpp">
+      <Filter>Base\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Base\FPS.cpp">
+      <Filter>Base\.cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Base\ErrorException.h">
+      <Filter>Base\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\DirectXCommon.h">
+      <Filter>Base\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\FPS.h">
+      <Filter>Base\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\WinApp.h">
+      <Filter>Base\.h</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
