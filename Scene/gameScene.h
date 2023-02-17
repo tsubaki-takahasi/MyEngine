@@ -3,6 +3,10 @@
 
 #include "Sprite.h"
 
+#include "Camera.h"
+#include "Light.h"
+#include "Model.h"
+#include "Object3d.h"
 
 class GameScene
 {
@@ -26,5 +30,10 @@ private:
 	Sprite* sprite_ = nullptr;
 	Sprite* sprite2_ = nullptr;
 
-	
+
+	Camera* camera_ = nullptr;
+	Light* light_ = nullptr;
+
+	Model* modelEnemy_ = nullptr;
+	Object3d* objEnemy_ = nullptr;
 };

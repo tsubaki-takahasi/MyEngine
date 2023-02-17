@@ -2,6 +2,8 @@
 #include "WinApp.h"
 #include "FPS.h"
 #include "gameScene.h"
+#include "Object3d.h"
+#include "Light.h"
 void DebugOutputFormatString(const char* format, ...) {
 #ifdef _DEBUG
 	va_list valist;
@@ -35,6 +37,10 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int)
 
 	//情的初期化
 	Sprite::StaticInitialize(dxCommon->GetDevice(), WinApp::window_width, WinApp::window_height);
+	// 3Dオブジェクト静的初期化
+	Object3d::StaticInitialize(dxCommon->GetDevice());
+	//ライト情的初期化
+	Light::StaticInitalize(dxCommon->GetDevice());
 
 	//ゲームシーンの初期化
 	gameScene = new GameScene();
