@@ -1,6 +1,7 @@
 #include "DirectXCommon.h"
 #include "WinApp.h"
 #include "FPS.h"
+#include "gameScene.h"
 void DebugOutputFormatString(const char* format, ...) {
 #ifdef _DEBUG
 	va_list valist;
@@ -23,6 +24,8 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int)
 	WinApp* winApp = nullptr;
 	DirectXCommon* dxCommon = nullptr;
 
+	GameScene* gameScene = nullptr;
+
 	winApp = new WinApp();
 	winApp->Initialize();
 
@@ -30,7 +33,12 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int)
 	dxCommon = DirectXCommon::GetInstance();
 	dxCommon->Initialize(winApp);
 
+	//î“I‰Šú‰»
+	Sprite::StaticInitialize(dxCommon->GetDevice(), WinApp::window_width, WinApp::window_height);
 
+	//ƒQ[ƒ€ƒV[ƒ“‚Ì‰Šú‰»
+	gameScene = new GameScene();
+	gameScene->Initalize();
 	//ƒQ[ƒ€ƒ‹[ƒv
 	while (true)
 	{
@@ -43,10 +51,13 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int)
 		}
 		//‚±‚±‚©‚çDirectX–ˆƒtƒŒ[ƒ€ˆ—
 
+		gameScene->Update();
 
 		//•`‰æ‘Oˆ—
 		dxCommon->preDraw();
 
+		//ƒQ[ƒ€ƒV[ƒ“‚Ì•`‰æ
+		gameScene->Draw();
 
 		//•`‰æŒãˆ—
 		dxCommon->postDraw();
@@ -59,7 +70,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int)
 	winApp->Finalize();
 	//“ü—Í‰ð•ú
 	delete winApp;
-
+	delete gameScene;
 
 	return 0;
 }
